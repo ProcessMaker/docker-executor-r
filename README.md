@@ -50,5 +50,5 @@ $ docker run -v <path to local data.json>:/opt/executor/data.json \
   -v <path to local script.r>:/opt/executor/script.r \
   -v <path to local output.json>:/opt/executor/output.json \
   processmaker/executor:r \
-  rscript /opt/executor/bootstrap.r
+  Rscript /opt/executor/bootstrap.r
 ```
