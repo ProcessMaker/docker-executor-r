@@ -1,5 +1,5 @@
 {
-    "name": "processmaker/docker-executor-r",
+    "name": "processmaker/executor-r",
     "friendly_name": "R Language Docker Executor",
     "description": "R language script executor for processmaker 4",
     "version": "0.0.1",
