@@ -9,3 +9,7 @@ WORKDIR /opt/executor
 
 # Install jsonlite R library
 RUN R -e 'install.packages("jsonlite")'
+
+# Install required OS packages
+RUN apt update
+RUN apt install -y libssl-dev libcurl4-openssl-dev
