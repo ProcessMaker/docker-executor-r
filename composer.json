@@ -1,8 +1,8 @@
 {
-    "name": "processmaker/executor-r",
+    "name": "processmaker/docker-executor-r",
     "friendly_name": "R Language Docker Executor",
     "description": "R language script executor for processmaker 4",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
