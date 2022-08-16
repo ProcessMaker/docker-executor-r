@@ -1,12 +1,13 @@
 <?php
+
 namespace ProcessMaker\Package\DockerExecutorR;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use ProcessMaker\Traits\PluginServiceProviderTrait;
-use ProcessMaker\Package\Packages\Events\PackageEvent;
-use ProcessMaker\Package\DockerExecutorR\Listeners\PackageListener;
 use ProcessMaker\Models\ScriptExecutor;
+use ProcessMaker\Package\DockerExecutorR\Listeners\PackageListener;
+use ProcessMaker\Package\Packages\Events\PackageEvent;
+use ProcessMaker\Traits\PluginServiceProviderTrait;
 
 class DockerExecutorRServiceProvider extends ServiceProvider
 {
@@ -37,18 +38,18 @@ class DockerExecutorRServiceProvider extends ServiceProvider
 
             // Build the instance image. This is the same as if you were to build it from the admin UI
             \Artisan::call('processmaker:build-script-executor r');
-            
+
             // Restart the workers so they know about the new supported language
             \Artisan::call('horizon:terminate');
         });
-        
+
         $config = [
             'name' => 'R',
             'runner' => 'RRunner',
             'mime_type' => 'application/R',
             'options' => [],
             'init_dockerfile' => [
-                "ARG SDK_DIR",
+                'ARG SDK_DIR',
                 'COPY $SDK_DIR /opt/sdk-r',
                 // 'WORKDIR /opt/sdk-r',
                 // 'RUN R -e \'install.packages("httr")\'',
