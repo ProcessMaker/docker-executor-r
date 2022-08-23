@@ -17,6 +17,7 @@ class RRunner extends Base
         $dockerConfig['image'] = config('script-runners.r.image');
         $dockerConfig['command'] = 'Rscript /opt/executor/bootstrap.r';
         $dockerConfig['inputs']['/opt/executor/script.r'] = $code;
+
         return $dockerConfig;
     }
 }
